@@ -1,0 +1,10 @@
+{
+  "name": "DesignX Engineering Services",
+  "short_name": "DesignX",
+  "icons": [
+    { "src": "/favicon-192x192.png", "sizes": "192x192", "type": "image/png" }
+  ],
+  "theme_color": "#0056D6",
+  "background_color": "#0A1628",
+  "display": "standalone"
+}
