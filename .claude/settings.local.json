@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(npx tsc *)",
+      "Bash(mkdir -p /Users/sathishs/Documents/MyFiles/designX/.claude)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(node -e \"const p = require\\('./package.json'\\); p.dependencies['react-router-dom'] = '^6.20.0'; require\\('fs'\\).writeFileSync\\('./package.json', JSON.stringify\\(p, null, 2\\)\\)\")"
+    ]
+  }
+}

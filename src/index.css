@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #0056D6;
+    --navy: #0A1628;
+    --electric: #00A3FF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-500 text-white font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: rgba(0, 86, 214, 0.3);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A1628;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #0056D6;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white text-sm tracking-wide transition-all duration-300;
+    background: linear-gradient(135deg, #0056D6 0%, #0047B3 100%);
+    box-shadow: 0 0 24px rgba(0, 86, 214, 0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(0, 86, 214, 0.6), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white text-sm tracking-wide transition-all duration-300;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .section-heading {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #93C5FD 50%, #60A5FA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .blue-gradient-text {
+    background: linear-gradient(135deg, #60A5FA 0%, #0056D6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 86, 214, 0.15);
+  }
+
+  .engineering-grid-bg {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='64' height='64' fill='none' stroke='rgba(0,86,214,0.08)'%3e%3cpath d='M0 .5H63.5V64'/%3e%3c/svg%3e");
+  }
+
+  .blueprint-grid {
+    background-color: #040d1a;
+    background-image:
+      linear-gradient(rgba(0, 86, 214, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 86, 214, 0.07) 1px, transparent 1px),
+      linear-gradient(rgba(0, 86, 214, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 86, 214, 0.03) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(1deg); }
+    66% { transform: translateY(-8px) rotate(-1deg); }
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .animate-float {
+    animation: float 7s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 7s ease-in-out infinite 2.5s;
+  }
+
+  .animate-orbit {
+    animation: orbit 12s linear infinite;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+}
